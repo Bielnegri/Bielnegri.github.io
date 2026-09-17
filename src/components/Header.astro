@@ -1,5 +1,10 @@
 ---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl, getTargetUrl} from '../i18n/utils';
 import '../styles/header.css';
+
+const currentPath = Astro.url.pathname;
+const currentLang = getLangFromUrl(Astro.url);
 ---
 
 <header>
@@ -13,11 +18,32 @@ import '../styles/header.css';
         <a class="tab" href="">Education</a>
     </div>
     <div class="contacts">
-        <div class="icon-container"><img class="icon" src="/github.png" alt="GitHub"></div>
-        <div class="icon-container"><img class="icon" src="/linkedin.png" alt="Linkedin"></div>
-        <div class="icon-container"><img class="icon" src="/linkedin.png" alt="Linkedin"></div> <!-- Link para email -->
+        <label>Contacts:</label>
+        <div class="icon-container">
+            <a href="https://www.github.com/Bielnegri">
+                <img class="icon" src="/github.png" alt="GitHub">
+            </a>
+        </div>
+        <div class="icon-container">
+            <a href="https://www.linkedin.com/in/gabriel-benedito-de-negri">
+                <img class="icon" src="/linkedin.png" alt="Linkedin">
+            </a>
+        </div>
+        <div class="icon-container">
+            <a href="mailto:gabrielbnegri@gmail.com">
+                <img class="icon" src="/enviar.png" alt="Linkedin">
+            </a>
+        </div> <!-- Link para email -->
     </div>
     <div class="language">
-        <!-- Botão para traduzir para PT-BR -->
+        <a href="">
+            <img src="/brazil.png" alt="PT">
+        </a>
+        <a href="">
+            <img src="/usa.png" alt="EN">
+        </a>
+        <a href={getTargetUrl(currentPath, currentLang,'es')} class:list={[{ active: currentLang === 'es' }]}>
+            <img src="/spain.png" alt="ES">
+        </a>
     </div>    
 </header>

@@ -25,7 +25,7 @@ header {
 .tabs {
     width: 40%;
     text-align: center;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .tab {
@@ -51,12 +51,16 @@ header {
     border-radius: 15px;
 }
 
+.contacts label {
+    margin: 10px;
+}
+
 .icon-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: 33%;
+    width: 25%;
     height: 100%;
 }
 
@@ -66,6 +70,18 @@ header {
     margin: 10px;
 }
 
+
 .language {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
     width: 15%;
+}
+
+.language img {
+    height: 30px;
+    margin: 5px;
+    border: 0 auto;
+    border-radius: 5px;
 }
