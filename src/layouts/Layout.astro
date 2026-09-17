@@ -2,10 +2,17 @@
 import '@fontsource/montserrat/400.css';
 import '@fontsource/inter/400.css';
 import '../styles/layout.css';
+
+interface Props {
+  title?: string;
+  lang?: string;
+}
+
+const {lang = "pt" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
