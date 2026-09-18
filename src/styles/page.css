@@ -1,0 +1,9 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; 
+}

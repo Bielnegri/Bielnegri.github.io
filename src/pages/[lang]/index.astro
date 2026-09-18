@@ -1,9 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Header  from "../../components/Header.astro";
-import '../../styles/pages.css';
+import Header from "../../components/Header.astro";
+import Summary from '../../components/Summary.astro';
 import { ui, languages } from '../../i18n/ui';
 import { useTranslations } from '../../i18n/utils';
+import '../../styles/page.css';
 
 export function getStaticPaths() {
   return Object.keys(languages).map((lang) => ({
@@ -18,4 +19,5 @@ const t = useTranslations(lang as keyof typeof ui);
 
 <Layout lang={currentLang}>
 	<Header/>
+  <Summary/>
 </Layout>
